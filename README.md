@@ -35,3 +35,5 @@ As users we want to see the list of clients, search clients, add new clients, mo
 * The API unfortunately is not working fine, the response maybe can fall in a 429 error or 500 error in certain moments (We need to take actions here to use a retry or show corrects messages to the users).
 
 * The API uses a token to pass the security, put it in a safe place.
+
+* When we select a contact, see the details isn't working anymore, this happened after a new deployment in the backend.

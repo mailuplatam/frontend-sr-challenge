@@ -12,7 +12,7 @@
           </div>
 
           <div v-if="mode == 'list'">
-            <button type="button" class="py-1 px-3 border bg-gray-100">Agregar cliente</button>
+            <button type="button" class="py-1 px-3 border bg-gray-100">Add customer</button>
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@
 
     <header class="bg-white shadow">
       <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-        <h1 v-if="mode == 'list'" class="text-3xl font-bold leading-tight tracking-tight text-gray-900">Clientes</h1>
+        <h1 v-if="mode == 'list'" class="text-3xl font-bold leading-tight tracking-tight text-gray-900">Customers</h1>
         <div v-if="mode == 'profile'" class="flex items-center space-x-3">
-          <button type="button" class="py-1 px-3 border bg-gray-100" @click="unselectCustomer">&lt Volver</button>
+          <button type="button" class="py-1 px-3 border bg-gray-100" @click="unselectCustomer">&lt Back</button>
           <h1 class="text-3xl font-bold leading-tight tracking-tight text-gray-900">{{ customerSelected.firstname }} {{ customerSelected.lastname }}</h1>
         </div>
       </div>
@@ -50,7 +50,7 @@
 
           <div class="my-1">
             <input v-model="formKeyword" @keyup.enter="searchCustomer" type="text" name="search" class="w-32 border p-1" placeholder="Buscar cliente por nombre y apellido" />
-            <button type="button" class="py-1 px-3 border bg-gray-100" @click="searchCustomer">Buscar</button>
+            <button type="button" class="py-1 px-3 border bg-gray-100" @click="searchCustomer">Search</button>
           </div>
 
           <div class="overflow-hidden bg-white shadow sm:rounded-md">
@@ -103,24 +103,24 @@
                         </div>
                         <div class="hidden md:block">
                           <div>
-                            <p class="truncate text-sm text-black">Personas conocidas</p>
+                            <p class="truncate text-sm text-black">Known people</p>
                             <div class="flex -space-x-1 overflow-hidden">
                               <img v-for="person of customer.people_known" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
                             </div>
                           </div>
                           <div>
-                            <p class="truncate text-sm text-black">Personas desconocidas</p>
+                            <p class="truncate text-sm text-black">People you may know</p>
                             <div class="flex -space-x-1 overflow-hidden">
-                              <img v-for="person of customer.people_unknown" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
+                              <img v-for="person of customer.people_you_may_unknown" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="flex items-center">
-                      <button type="button" class="py-1 px-3 border bg-gray-100" @click="selectCustomer(customer)">Ver</button>
-                      <button type="button" class="py-1 px-3 border bg-gray-100">Editar</button>
-                      <button type="button" class="py-1 px-3 border bg-gray-100">Eliminar</button>
+                      <button type="button" class="py-1 px-3 border bg-gray-100" @click="selectCustomer(customer)">See</button>
+                      <button type="button" class="py-1 px-3 border bg-gray-100">Edit</button>
+                      <button type="button" class="py-1 px-3 border bg-gray-100">Delete</button>
                     </div>
                   </div>
                 </div>
@@ -180,26 +180,30 @@
                           </template>
                         </div>
                       </div>
-                      <div class="hidden md:block">
-                        <div>
-                          <p class="truncate text-sm text-black">Personas conocidas</p>
-                          <div class="flex -space-x-1 overflow-hidden">
-                            <img v-for="person of customerSelected.people_known" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
-                          </div>
-                        </div>
-                        <div>
-                          <p class="truncate text-sm text-black">Personas desconocidas</p>
-                          <div class="flex -space-x-1 overflow-hidden">
-                            <img v-for="person of customerSelected.people_unknown" class="inline-block h-6 w-6 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
+          <div class="p-6">
+            <p class="truncate text-sm text-black">Known people</p>
+            <div class="flex space-x-1 overflow-hidden">
+              <div v-for="person of customerSelected.people_known">
+                <img class="inline-block h-20 w-20 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
+                <p>{{ person.extras.nested.info }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="truncate text-sm text-black">People you may know</p>
+            <div class="flex space-x-1 overflow-hidden">
+              <div v-for="person of customerSelected.people_you_may_unknown">
+                <img class="inline-block h-20 w-20 rounded-full ring-2 ring-white" :src="person.photo" :title="`${person.firstname} ${person.lastname}`" alt="" />
+                <p>{{ person.extras.nested.data }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
