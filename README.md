@@ -39,7 +39,7 @@ In this challenge, you will have the opportunity to demonstrate your skills in U
 ## Installation
 
 ```
-git clone https://github.com/mailuplatam/frontend-sr-challenge.git .
+git clone https://github.com/mailuplatam/frontend-sr-challenge.git
 ```
 
 ```
