@@ -1,39 +1,59 @@
+# Frontend Senior Software Engineer UI/UX
+We are seeking a talented frontend senior software engineer with a strong background in UI/UX design. The ideal candidate will have a good understanding of many technical aspects and will be able to demonstrate their skills in creating user interfaces and improving user experience.
 
-# Front end senior challenge
-
-
-We are looking for a frontend senior software engineer UI/UX.
-
-The developer needs to accomplish successful this challenge.
-
-This challenge shows the good understanding in many technical aspects.
-
-* Show skill making user interfaces.
-* Show skill improving user experience.
-* Show the good uses of the composition API of Vue 3.
+## Challenge
+The challenge is to improve a client list application. The current main component has all the logic in one place and it needs to be refactored to take it to the next level by adding routes, creating and separating components, and improving the design.
+The goals of the challenge are to:
+* Show proficiency in using the composition API of Vue 3.
 * Show micro animations and a smooth navigation (router, buttons, loading, validations, etc.).
-* Uses the store Vuex or Pinia to maintain the state of the app.
-* Create and uses components patter to reuse across the app. 
-* Read a Postman collection and understand how the API REST works.
-* Understand and check complexes JSON and access to the key if exists correctly.
-* Press attention to the status de response of the API to show the correct message. 
-* Make tests to ensure that the app works as expected.
-* Writes a good README to test the app, easy and clear.
+* Use Vuex or Pinia to maintain the app's state.
+* Create and use a component pattern to allow for reusability across the app.
+* Read a Postman collection and understand how the REST API works (Frontend challenge.postman_collection.json).
+* Understand and access complex JSON and retrieve data correctly.
+* Pay attention to the API response status to display the correct message.
+* Write tests to ensure the app works as expected.
+* Write a clear and easy-to-follow README to test the app.
 
 
 
-## Description of the challenge.
+## Functionality
 
-This is a list of clients that shows a lot of information about them, the main component has all the logic in one place and it's not right, we need you to take it to the next level, adding routes, creating and separating into components to reuse them in the screens to create, making the design according to the rest of the app and modify it to make it more beautiful, improve the user experience with modals, new screens, micro animations and in this way you will give this little app an opportunity to grow and scale over time.
+As users, we want to be able to:
+* View a list of clients.
+* Search for clients.
+* Add new clients.
+* Modify existing clients.
+* Delete clients.
+* View the details of individual clients.
 
-As users we want to see the list of clients, search clients, add new clients, modify clients, delete clients and see the details of the clients individually.
+Note: Information about people you know and people you may know should not be included in the add and modify client forms.
+The forms must interact with the API and pass the API's validation. The API will respond with success or error messages, but will not add or modify data in the database.
 
-* Information about people you know and people you may know should not be added in the add and modify customer forms (the purpose of this information is to have more visual material and information to play with).
+## API Considerations
+Please note that the API may not be functioning correctly and may return a 429 or 500 error at times. It is important to implement a retry mechanism or display appropriate messages to the users in such cases. The API uses a token for security, so it is important to keep it safe.
+Additionally, the ability to view client details is not currently working after a recent backend deployment.
 
-* The forms must be able to interact with the API and pass the validation that the API has, the API will respond to success or error messages in each case, but will not add or modify the data in the database.
+## Summary
+In this challenge, you will have the opportunity to demonstrate your skills in UI/UX design, Vue 3, and API interaction. You will improve a client list application by adding routes, separating components, and improving the design, among other tasks. This is a great opportunity to showcase your skills and take this little app to the next level.
 
-* The API unfortunately is not working fine, the response maybe can fall in a 429 error or 500 error in certain moments (We need to take actions here to use a retry or show corrects messages to the users).
+## Installation
 
-* The API uses a token to pass the security, put it in a safe place.
+```
+git clone https://github.com/mailuplatam/frontend-sr-challenge.git .
+```
 
-* When we select a contact, see the details isn't working anymore, this happened after a new deployment in the backend.
+```
+cd frontend-sr-challenge.git
+```
+
+```
+npm install
+```
+
+```
+npm run dev
+```
+
+## How to send the challenge?
+
+You need to send the challenge to the person that contact to you, you need to share a link to the public repository.
